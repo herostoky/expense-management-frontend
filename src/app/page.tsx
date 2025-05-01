@@ -1,143 +1,183 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 md:p-8 bg-background">
-      <div className="max-w-4xl w-full space-y-10">
-        {/* Hero Section */}
-        <div className="text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Take Control of Your <span className="text-primary">Finances</span>
+    <main className="min-h-screen flex flex-col items-center text-foreground">
+      {/* Hero Section */}
+      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-1 space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <span className="text-primary">Manage</span> your finances with ease
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Track expenses, monitor income, and visualize your financial journey
-            with our intuitive expense management platform.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+            Track expenses, monitor income, and take control of your financial
+            future with our intuitive expense management app.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a
-              href="/signup"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Sign Up
-            </a>
-            <a
-              href="/signin"
-              className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Sign In
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+              Get Started
+            </button>
+            <button className="px-8 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors">
+              Learn More
+            </button>
           </div>
         </div>
-
-        {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
-          <div className="bg-card p-6 rounded-lg shadow-sm border border-border">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6 text-primary"
-              >
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
+        <div className="flex-1 relative">
+          <div className="aspect-square max-w-md rounded-2xl bg-card p-6 shadow-xl border border-border">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-semibold">Expense Overview</h3>
+              <span className="text-sm text-muted-foreground">August 2023</span>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Track Expenses</h3>
-            <p className="text-muted-foreground">
-              Keep track of where your money goes with detailed expense
-              categories and reporting.
-            </p>
-          </div>
-
-          <div className="bg-card p-6 rounded-lg shadow-sm border border-border">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6 text-primary"
-              >
-                <path d="M18 6 7 17l-5-5" />
-                <path d="m22 10-7.5 7.5L13 16" />
-              </svg>
+            <div className="space-y-4">
+              <div className="h-40 bg-muted/30 rounded-lg mb-6 flex items-center justify-center">
+                <div className="w-full h-32 flex items-end justify-around px-4">
+                  <div className="w-1/5 bg-chart-1 h-[60%] rounded-t-md"></div>
+                  <div className="w-1/5 bg-chart-2 h-[80%] rounded-t-md"></div>
+                  <div className="w-1/5 bg-chart-3 h-[40%] rounded-t-md"></div>
+                  <div className="w-1/5 bg-chart-4 h-[70%] rounded-t-md"></div>
+                  <div className="w-1/5 bg-chart-5 h-[50%] rounded-t-md"></div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span>Groceries</span>
+                  <span className="font-medium">$350.00</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span>Transportation</span>
+                  <span className="font-medium">$120.50</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span>Entertainment</span>
+                  <span className="font-medium">$85.75</span>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-semibold mb-2">Manage Income</h3>
-            <p className="text-muted-foreground">
-              Record all your income sources to get a complete picture of your
-              financial health.
-            </p>
-          </div>
-
-          <div className="bg-card p-6 rounded-lg shadow-sm border border-border">
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6 text-primary"
-              >
-                <rect width="18" height="18" x="3" y="3" rx="2" />
-                <path d="M9 9h6v6H9z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Custom Categories</h3>
-            <p className="text-muted-foreground">
-              Create personalized categories that reflect your unique spending
-              and income patterns.
-            </p>
           </div>
         </div>
+      </section>
 
-        {/* Testimonial Section */}
-        <div className="bg-accent/30 p-8 rounded-lg border border-border">
-          <div className="flex flex-col items-center text-center">
-            <div className="relative w-16 h-16 mb-4 rounded-full overflow-hidden bg-muted">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="absolute inset-0 w-full h-full text-muted-foreground"
+      {/* Features Section */}
+      <section className="w-full py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Powerful Features
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to manage your personal finances effectively.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Expense Tracking",
+                description:
+                  "Log and categorize your expenses with ease. Keep track of where your money goes.",
+                icon: "📊",
+              },
+              {
+                title: "Income Management",
+                description:
+                  "Record all your income sources and see your earnings at a glance.",
+                icon: "💰",
+              },
+              {
+                title: "Custom Categories",
+                description:
+                  "Create personalized categories that match your specific financial needs.",
+                icon: "🏷️",
+              },
+              {
+                title: "Budget Planning",
+                description:
+                  "Set budgets for different categories and track your spending against them.",
+                icon: "📝",
+              },
+              {
+                title: "Visual Reports",
+                description:
+                  "View your financial data with beautiful charts and insightful analytics.",
+                icon: "📈",
+              },
+              {
+                title: "Secure & Private",
+                description:
+                  "Your financial data is encrypted and never shared with third parties.",
+                icon: "🔒",
+              },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="bg-background rounded-xl p-6 border border-border hover:shadow-md transition-shadow"
               >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
-            <blockquote className="text-lg italic mb-4 max-w-2xl">
-              &quot;This expense management app has completely transformed how I
-              handle my finances. Now I can see exactly where my money is going
-              and make better decisions.&quot;
-            </blockquote>
-            <cite className="text-sm font-medium not-italic text-foreground">
-              — Sarah J., Financial Planner
-            </cite>
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="py-6 text-center text-sm text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} Expense Management. All rights
-            reserved.
+      {/* CTA Section */}
+      <section className="w-full py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to take control of your finances?
+          </h2>
+          <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+            Join thousands of users who have transformed their financial
+            management with our app.
           </p>
-        </footer>
-      </div>
+          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors">
+            Get Started Today
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full bg-card py-12 border-t border-border mt-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-6 md:mb-0">
+              <h2 className="text-2xl font-bold">Expense Manager</h2>
+              <p className="text-muted-foreground">
+                Take control of your financial future
+              </p>
+            </div>
+            <div className="flex space-x-8">
+              <a
+                href="#"
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                Features
+              </a>
+              <a
+                href="#"
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                Pricing
+              </a>
+              <a
+                href="#"
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                Support
+              </a>
+              <a
+                href="#"
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
+            <p>
+              © {new Date().getFullYear()} Expense Manager. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
