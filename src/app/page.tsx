@@ -32,37 +32,114 @@ export default function Home() {
       </div>
 
       {/* Features section */}
-      <div className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16">Key Features</h2>
+      <div className="py-24 px-4 bg-gradient-to-b from-background to-background/60 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-primary/30 blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-secondary/30 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-20 h-20 rounded-full bg-accent/20 blur-xl"></div>
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="flex flex-col items-center mb-20">
+            <div className="inline-block px-4 py-1 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4">
+              Powerful Features
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+              Everything You Need{" "}
+              <span className="text-primary">In One Place</span>
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl">
+              Our comprehensive suite of tools makes financial management
+              simple, intuitive, and even enjoyable.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Expense Tracking",
                 description:
-                  "Log and categorize your expenses to understand your spending habits.",
-                icon: "📊",
+                  "Log and categorize your expenses with detailed insights and visual breakdowns of your spending habits.",
+                icon: "💸",
+                color: "from-blue-500/20 to-indigo-500/20",
+                shadow: "shadow-blue-500/10",
               },
               {
                 title: "Income Management",
                 description:
-                  "Keep track of all your income sources in one convenient place.",
+                  "Track multiple income streams with automatic categorization and real-time analysis of your earning patterns.",
                 icon: "💰",
+                color: "from-emerald-500/20 to-green-500/20",
+                shadow: "shadow-emerald-500/10",
               },
               {
                 title: "Custom Categories",
                 description:
-                  "Create personalized categories that fit your unique financial needs.",
+                  "Create personalized categories with custom icons and rules that adapt to your unique financial organization needs.",
                 icon: "🏷️",
+                color: "from-amber-500/20 to-orange-500/20",
+                shadow: "shadow-amber-500/10",
               },
             ].map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors"
+                className="group flex flex-col h-full rounded-2xl bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/30 hover:-translate-y-1"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <div
+                  className={`p-6 rounded-t-2xl bg-gradient-to-br ${feature.color}`}
+                >
+                  <div
+                    className={`w-16 h-16 flex items-center justify-center rounded-2xl bg-background ${feature.shadow} text-4xl mb-4`}
+                  >
+                    {feature.icon}
+                  </div>
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed flex-1">
+                    {feature.description}
+                  </p>
+                  <div className="mt-6 pt-4 border-t border-border">
+                    <a
+                      href="#"
+                      className="inline-flex items-center text-sm font-medium text-primary"
+                    >
+                      Learn more
+                      <svg
+                        className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-20 pt-10 border-t border-border/50 grid md:grid-cols-4 gap-6 text-center">
+            {[
+              { value: "10K+", label: "Active Users" },
+              { value: "$2.5M", label: "Tracked Monthly" },
+              { value: "99.9%", label: "Uptime" },
+              { value: "24/7", label: "Support" },
+            ].map((stat, index) => (
+              <div key={index} className="p-4">
+                <div className="text-3xl font-bold text-primary mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
