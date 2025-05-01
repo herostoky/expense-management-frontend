@@ -25,6 +25,8 @@ export default function FooterSection() {
             <Link
               href="https://linkedin.com/in/herostoky"
               className="text-primary hover:underline transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Contact
             </Link>
