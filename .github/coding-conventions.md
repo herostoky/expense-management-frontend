@@ -32,6 +32,8 @@ Use `aria-*` attributes for accessibility.
 
 Use `alt` attributes for images.
 
+Always hover cusor on buttons and links.
+
 Use <Button> for buttons, not <a> or <div>.
 
 Use <Link> for navigation, not <a> or <div>.
