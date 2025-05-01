@@ -31,3 +31,27 @@ Use `onClick`, not `onclick`.
 Use `aria-*` attributes for accessibility.
 
 Use `alt` attributes for images.
+
+Use <Button> for buttons, not <a> or <div>.
+
+Use <Link> for navigation, not <a> or <div>.
+
+Use <Image> for images, not <img>.
+
+Use <Input> for inputs, not <input>.
+
+Use <Select> for selects, not <select>.
+
+Use <Textarea> for textareas, not <textarea>.
+
+Use <Modal> for modals, not <div> or <span>.
+
+Use <Tooltip> for tooltips, not <div> or <span>.
+
+Use <Popover> for popovers, not <div> or <span>.
+
+Use <Dropdown> for dropdowns, not <div> or <span>.
+
+Use <Accordion> for accordions, not <div> or <span>.
+
+Use <Tabs> for tabs, not <div> or <span>.
