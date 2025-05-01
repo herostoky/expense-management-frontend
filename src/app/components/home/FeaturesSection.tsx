@@ -1,25 +1,16 @@
-export default function FeaturesSection() {
-  const features = [
-    {
-      title: "Expense Tracking",
-      description:
-        "Log and categorize your expenses with ease. Keep track of where your money goes.",
-      icon: "📊",
-    },
-    {
-      title: "Income Management",
-      description:
-        "Record all your income sources and see your earnings at a glance.",
-      icon: "💰",
-    },
-    {
-      title: "Custom Categories",
-      description:
-        "Create personalized categories that match your specific financial needs.",
-      icon: "🏷️",
-    },
-  ];
+type Feature = {
+  title: string;
+  description: string;
+  icon: string;
+};
 
+type FeaturesSectionProps = {
+  features: Feature[];
+};
+
+export default function FeaturesSection({
+  features,
+}: Readonly<FeaturesSectionProps>) {
   return (
     <section className="w-full py-20 bg-blue-50" id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
