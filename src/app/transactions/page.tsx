@@ -40,11 +40,6 @@ export default function TransactionsPage() {
           </p>
         </div>
         <div className="flex items-center space-x-3 self-end sm:self-auto">
-          <select className="px-4 py-2 bg-background border rounded-md text-sm focus:ring-2 focus:ring-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 transition-all">
-            <option>July 2023</option>
-            <option>June 2023</option>
-            <option>May 2023</option>
-          </select>
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
             <PlusIcon className="h-4 w-4 mr-2" />
             New Transaction
@@ -217,8 +212,11 @@ export default function TransactionsPage() {
         <CardContent className="px-0 pt-2 pb-4">
           <div className="space-y-2">
             {/* Day 1 */}
-            <div>
-              <div className="px-6 py-3 bg-muted/30">
+            <div className="border-border/30 transition-all">
+              <button
+                className="w-full px-6 py-3 bg-muted/30 hover:bg-muted/50 transition-colors flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20"
+                aria-expanded="true"
+              >
                 <div className="flex items-center">
                   <CalendarIcon className="h-4 w-4 text-primary mr-2" />
                   <h3 className="text-sm font-medium">Today, July 24</h3>
@@ -226,9 +224,10 @@ export default function TransactionsPage() {
                     3 transactions
                   </Badge>
                 </div>
-              </div>
+                <ChevronDownIcon className="h-4 w-4 text-muted-foreground transition-transform duration-200" />
+              </button>
 
-              <div>
+              <div className="transition-all duration-300">
                 <div className="flex items-center p-4 hover:bg-accent/5 transition-colors border-b border-border/30">
                   <div className="mr-4">
                     <div className="p-2 rounded-full bg-green-500/10 text-green-500">
@@ -236,9 +235,21 @@ export default function TransactionsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">Salary</div>
-                    <div className="text-sm text-muted-foreground">
-                      Personal Wallet
+                    <div className="font-medium flex items-center">
+                      <span>Salary</span>
+                      <Badge
+                        variant="outline"
+                        className="ml-2 text-xs bg-green-500/5 text-green-500 border-green-500/20"
+                      >
+                        Income/Wages
+                      </Badge>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex items-center space-x-1">
+                      <span>Personal Wallet</span>
+                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-xs">
+                        Monthly payment from ABC Company
+                      </span>
                     </div>
                   </div>
                   <div className="text-right">
@@ -256,20 +267,65 @@ export default function TransactionsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">Rent</div>
-                    <div className="text-sm text-muted-foreground">Housing</div>
+                    <div className="font-medium flex items-center">
+                      <span>Rent</span>
+                      <Badge
+                        variant="outline"
+                        className="ml-2 text-xs bg-red-500/5 text-red-500 border-red-500/20"
+                      >
+                        Housing/Rent
+                      </Badge>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex items-center space-x-1">
+                      <span>Bank Account</span>
+                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-xs">
+                        Monthly apartment rent payment
+                      </span>
+                    </div>
                   </div>
                   <div className="text-right">
                     <div className="font-medium text-red-500">-350,000 MGA</div>
                     <div className="text-xs text-muted-foreground">2:15 PM</div>
                   </div>
                 </div>
+
+                <div className="flex items-center p-4 hover:bg-accent/5 transition-colors border-b border-border/30">
+                  <div className="mr-4">
+                    <div className="p-2 rounded-full bg-red-500/10 text-red-500">
+                      <ShoppingCartIcon className="h-5 w-5" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-medium flex items-center">
+                      <span>Supermarket</span>
+                      <Badge
+                        variant="outline"
+                        className="ml-2 text-xs bg-red-500/5 text-red-500 border-red-500/20"
+                      >
+                        Food/Groceries
+                      </Badge>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex items-center space-x-1">
+                      <span>Credit Card</span>
+                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-xs">Weekly grocery shopping</span>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-medium text-red-500">-85,000 MGA</div>
+                    <div className="text-xs text-muted-foreground">4:45 PM</div>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Day 2 */}
-            <div>
-              <div className="px-6 py-3 bg-muted/30">
+            <div className="border-border/30 transition-all">
+              <button
+                className="w-full px-6 py-3 bg-muted/30 hover:bg-muted/50 transition-colors flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20"
+                aria-expanded="true"
+              >
                 <div className="flex items-center">
                   <CalendarIcon className="h-4 w-4 text-primary mr-2" />
                   <h3 className="text-sm font-medium">July 23</h3>
@@ -277,9 +333,10 @@ export default function TransactionsPage() {
                     2 transactions
                   </Badge>
                 </div>
-              </div>
+                <ChevronDownIcon className="h-4 w-4 text-muted-foreground transition-transform duration-200" />
+              </button>
 
-              <div>
+              <div className="transition-all duration-300">
                 <div className="flex items-center p-4 hover:bg-accent/5 transition-colors border-b border-border/30">
                   <div className="mr-4">
                     <div className="p-2 rounded-full bg-yellow-500/10 text-yellow-500">
@@ -287,8 +344,22 @@ export default function TransactionsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">Loan to Friend</div>
-                    <div className="text-sm text-muted-foreground">Cash</div>
+                    <div className="font-medium flex items-center">
+                      <span>Loan to Friend</span>
+                      <Badge
+                        variant="outline"
+                        className="ml-2 text-xs bg-yellow-500/5 text-yellow-500 border-yellow-500/20"
+                      >
+                        Personal/Loans
+                      </Badge>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex items-center space-x-1">
+                      <span>Cash</span>
+                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-xs">
+                        John's car repair emergency
+                      </span>
+                    </div>
                   </div>
                   <div className="text-right">
                     <div className="font-medium text-yellow-500">
@@ -305,9 +376,19 @@ export default function TransactionsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">Groceries</div>
-                    <div className="text-sm text-muted-foreground">
-                      Credit Card
+                    <div className="font-medium flex items-center">
+                      <span>Restaurant</span>
+                      <Badge
+                        variant="outline"
+                        className="ml-2 text-xs bg-red-500/5 text-red-500 border-red-500/20"
+                      >
+                        Food/Dining Out
+                      </Badge>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex items-center space-x-1">
+                      <span>Credit Card</span>
+                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-xs">Dinner with colleagues</span>
                     </div>
                   </div>
                   <div className="text-right">
@@ -321,8 +402,11 @@ export default function TransactionsPage() {
             </div>
 
             {/* Day 3 */}
-            <div>
-              <div className="px-6 py-3 bg-muted/30">
+            <div className="border-border/30 transition-all">
+              <button
+                className="w-full px-6 py-3 bg-muted/30 hover:bg-muted/50 transition-colors flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20"
+                aria-expanded="true"
+              >
                 <div className="flex items-center">
                   <CalendarIcon className="h-4 w-4 text-primary mr-2" />
                   <h3 className="text-sm font-medium">July 22</h3>
@@ -330,9 +414,10 @@ export default function TransactionsPage() {
                     1 transaction
                   </Badge>
                 </div>
-              </div>
+                <ChevronDownIcon className="h-4 w-4 text-muted-foreground transition-transform duration-200" />
+              </button>
 
-              <div>
+              <div className="transition-all duration-300">
                 <div className="flex items-center p-4 hover:bg-accent/5 transition-colors border-b border-border/30">
                   <div className="mr-4">
                     <div className="p-2 rounded-full bg-red-500/10 text-red-500">
@@ -340,9 +425,21 @@ export default function TransactionsPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">Internet Bill</div>
-                    <div className="text-sm text-muted-foreground">
-                      Bank Account
+                    <div className="font-medium flex items-center">
+                      <span>Internet Bill</span>
+                      <Badge
+                        variant="outline"
+                        className="ml-2 text-xs bg-red-500/5 text-red-500 border-red-500/20"
+                      >
+                        Utilities/Internet
+                      </Badge>
+                    </div>
+                    <div className="text-sm text-muted-foreground flex items-center space-x-1">
+                      <span>Bank Account</span>
+                      <span className="text-muted-foreground/50">•</span>
+                      <span className="text-xs">
+                        Monthly fiber subscription
+                      </span>
                     </div>
                   </div>
                   <div className="text-right">
